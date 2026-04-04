@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { Movie } from '../types/movie';
 
 const API_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
-console.log("Мій токен:", API_TOKEN);
+console.log("Статус токена:", API_TOKEN ? "Знайдено" : "Відсутній");
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 interface TMDBResponse {
