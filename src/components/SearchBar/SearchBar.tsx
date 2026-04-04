@@ -8,18 +8,18 @@ interface SearchBarProps {
 export default function SearchBar({ onSubmit }: SearchBarProps) {
   const handleFormAction = (formData: FormData) => {
     const query = formData.get('query') as string;
-
     if (!query || query.trim() === "") {
       toast.error("Please enter a search term!");
       return;
     }
-
     onSubmit(query.trim());
   };
 
   return (
     <header className={s.header}>
       {}
+      <div className={s.logo}>Powered by TMDB</div> 
+      
       <form action={handleFormAction} className={s.form}>
         <input
           className={s.input}
